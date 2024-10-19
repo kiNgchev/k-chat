@@ -1,5 +1,5 @@
 # Meet K-chat!
-K-chat is a simple console messenger, written on Kotlin/Native
+K-chat is a simple console messanger, written on Kotlin/Native
 
 ## Platform supported
 
