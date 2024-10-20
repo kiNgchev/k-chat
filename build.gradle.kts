@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.cli.common.isWindows
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
 }
@@ -23,6 +25,12 @@ kotlin {
         hostOs == "Linux" && !isArm64 -> linuxX64("native")
         isMingwX64 -> mingwX64("native")
         else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
+    }
+
+    sourceSets {
+        nativeMain.dependencies {
+            implementation(libs.bundles.ktor)
+        }
     }
 
     nativeTarget.apply {
